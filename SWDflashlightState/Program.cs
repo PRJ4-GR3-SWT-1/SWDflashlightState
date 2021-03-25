@@ -24,16 +24,21 @@ namespace SWDflashlightState
                     break;
                 case false:
                     TurnOn();
-                    IsOff = true;
+                    IsOn = true;
                     break;
                 default:
                     break;
             }
         }
 
+        private void TurnOn()
+        {
+            Console.WriteLine("Wuhuuu On");
+        }
+
         private void TurnOff()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Aww off");
         }
     }
 }
