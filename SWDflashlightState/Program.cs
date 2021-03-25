@@ -6,39 +6,45 @@ namespace SWDflashlightState
     {
         static void Main(string[] args)
         {
+            //Console.WriteLine("Hello World!");
+            //Flashlight flash = new Flashlight();
+            //flash.ButtonPress();
+            //flash.ButtonPress();
+            //flash.ButtonPress();
+
             Console.WriteLine("Hello World!");
+            FlashlightGof flash2 = new FlashlightGof();
+            flash2.Power();
+            flash2.Power();
+            flash2.Power();
         }
     }
 
-    public class Flashlight
+    public class FlashlightGof
     {
-        private bool IsOn=false;
-
-        public void ButtonPress()
+        public FlashlightGof()
         {
-            switch (IsOn)
-            {
-                case true:
-                    TurnOff();
-                    IsOn = false;
-                    break;
-                case false:
-                    TurnOn();
-                    IsOn = true;
-                    break;
-                default:
-                    break;
-            }
+            _state = new Off();
+        }
+        private SWDflashlightState _state;
+        public void SetState(SWDflashlightState state)
+        {
+            _state = state;
         }
 
-        private void TurnOn()
+        public void Power()
         {
-            Console.WriteLine("Wuhuuu On");
+            _state.HandlePower(this);
         }
 
-        private void TurnOff()
+        public void LightOn()
         {
-            Console.WriteLine("Aww off");
+            Console.WriteLine("Whuhuhuuu On");
+        }
+
+        public void LightOff()
+        {
+            Console.WriteLine("Øøøøvvøøvøv Off");
         }
     }
 }

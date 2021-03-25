@@ -1,0 +1,13 @@
+﻿frame Flashlight
+
+Main->Flashlight:Power()
+Flashlight->Off:HandlePower
+Off->Flashlight:TurnOn()
+Flashlight->Main:Light
+Off->Flashlight:SetState
+
+Main->Flashlight:Power()
+Flashlight->On:HandlePower
+On->Flashlight:TurnOff()
+Flashlight->Main:Darkness
+On->Flashlight:SetState
