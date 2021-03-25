@@ -5,6 +5,7 @@ namespace SWDflashlightState
     public class Flashlight
     {
         private bool IsOn=false;
+        private int Mode = 0;
 
         public void ButtonPress()
         {
@@ -22,10 +23,33 @@ namespace SWDflashlightState
                     break;
             }
         }
+        public void ModePress()
+        {
+            switch (Mode)
+            {
+                case 1:
+                    Mode =0;
+                    //Swith on IsOn
+                    break;
+                
+                default:
+                    Mode = 1;
+                    //Swith on IsOn
+                    break;
+            }
+        }
 
         private void TurnOn()
         {
-            Console.WriteLine("Wuhuuu On");
+            switch (Mode)
+            {
+                case 1:
+                    //something
+                    break;
+                default:
+                    //somehting else
+                    break;
+            }
         }
 
         private void TurnOff()
